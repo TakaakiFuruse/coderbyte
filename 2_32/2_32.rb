@@ -21,12 +21,31 @@ counter_hash.map{|k,i| p "#{i}#{k}" }.join("")
 =end
 
 def RunLength(str)
+  str_array = str_to_a(str)
+  count_hash = create_counter_hash(str_array)
+  hash_to_s(count_hash)
 end
 
 def str_to_a(str)
+  str.split("")
 end
 
 def create_counter_hash(array)
+  counter_hash = Hash.new
+
+  array.each do |n| 
+    if counter_hash[:"#{n}"].nil?
+      counter_hash[:"#{n}"]=1
+    else
+      counter_hash[:"#{n}"]+=1
+    end
+  end
+  
+  return counter_hash
+end
+
+def hash_to_s(hash)
+  hash.map{|k,i| p "#{i}#{k}" }.join("")
 end
 
 

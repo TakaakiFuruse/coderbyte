@@ -23,3 +23,10 @@ describe "create_counter_hash" do
     expect(create_counter_hash(array)).to eq(hash)
   end
 end
+
+describe "hash_to_s" do
+  it "puts key and value" do
+    hash = {a: 2, b: 2}
+    expect(hash_to_s(hash)).to eq("2a2b")
+  end
+end
