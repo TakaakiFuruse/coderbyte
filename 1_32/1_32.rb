@@ -2,9 +2,7 @@
 # Input = 19Output = true
 # Input = 110Output = false
 
-def PrimeTime(num)
+def prime_time(num)
 
-         
 end
-   
 
