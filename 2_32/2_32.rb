@@ -37,7 +37,7 @@ def create_counter_hash(array)
   array.each do |n| 
     if counter_hash[:"#{n}"].nil?
       counter_hash[:"#{n}"]=1
-    elseif counter_hash
+    elsif
       counter_hash[:"#{n}"]+=1
     end
   end
@@ -47,7 +47,7 @@ def create_counter_hash(array)
 end
 
 def hash_to_s(hash)
-  hash.map{|k,i| p "#{i}#{k}" }.join("")
+  hash.map{|k,i| "#{i}#{k}" }.join("")
 end
 
 RunLength("wwwbbbw")
