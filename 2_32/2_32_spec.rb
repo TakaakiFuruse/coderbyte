@@ -7,23 +7,15 @@ describe "RunLength" do
   end
 end
 
-describe "str_to_a" do
+describe "str_to_a" o
   it "creates array from str" do
   expect(str_to_a("aaa")).to eq(["a", "a", "a"])
   end
 end
 
-describe "create_counter_hash" do
-  it "returns hash with letter as value and count as key" do
-    hash = {a: 2, b: 2}
+describe "create_counter_array" do
+  it "returns array with letter and count" do
     array = ["a", "a", "b", "b"]
-    expect(create_counter_hash(array)).to eq(hash)
-  end
-end
-
-describe "hash_to_s" do
-  it "puts key and value" do
-    hash = {a: 2, b: 2}
-    expect(hash_to_s(hash)).to eq("2a2b")
+    expect(create_counter_array(array)).to eq([2, "a", 2, "b"])
   end
 end
