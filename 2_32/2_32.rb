@@ -19,6 +19,7 @@ counter_hash = Hash.new
 counter_hash.map{|k,i| p "#{i}#{k}" }.join("")
 
 =end
+require 'pry'
 
 def RunLength(str)
   str_array = str_to_a(str)
@@ -36,11 +37,12 @@ def create_counter_hash(array)
   array.each do |n| 
     if counter_hash[:"#{n}"].nil?
       counter_hash[:"#{n}"]=1
-    else
+    elseif counter_hash
       counter_hash[:"#{n}"]+=1
     end
   end
   
+
   return counter_hash
 end
 
@@ -48,4 +50,4 @@ def hash_to_s(hash)
   hash.map{|k,i| p "#{i}#{k}" }.join("")
 end
 
-
+RunLength("wwwbbbw")
