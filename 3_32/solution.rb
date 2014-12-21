@@ -15,23 +15,23 @@ isprime?(num)
   if num % [2..num-1] == 0-> return true
 
 =end
-
+require 'pry'
 
 def PrimeMover(num)
-  return num 
+  prime_array[num-1]
 end
 
 def isprime?(num)
   num_to_divide = (2..(num-1)).to_a
-  num_to_divide.select! do |n|
-    num % n == 0
+  num_to_divide.reject! do |n|
+    num % n != 0
   end
   num_to_divide == []
 end
 
 def prime_array
-  prime_arr = (1..479909).to_a
-  prime_arr.select! do |n|
-    isprime?(n) == true
+  prime_array = (2..547).to_a
+  prime_array.delete_if do |num|
+    isprime?(num) != true
   end
 end
