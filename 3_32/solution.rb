@@ -31,7 +31,7 @@ end
 
 def prime_array
   prime_array = (2..547).to_a
-  prime_array.delete_if do |num|
-    isprime?(num) != true
+  prime_array.select! do |num|
+    isprime?(num)
   end
 end

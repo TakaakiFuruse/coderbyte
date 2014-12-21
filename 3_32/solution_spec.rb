@@ -20,7 +20,7 @@ end
 
 describe "prime_array" do
   it "returns arr of 101th prime nums" do
-    expect(prime_array.last).to eq(547)
     expect(prime_array.length).to eq(101)
+    expect(prime_array.last).to eq(547)
   end
 end
