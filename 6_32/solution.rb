@@ -10,5 +10,5 @@ Input = "rkqodlw" & str2 = "world"  Output = "true"
 require 'pry'
 
 def StringScramble(str1,str2)
-
+  str2.split("").sort! == (str1.split("") & str2.split("")).sort!
 end
