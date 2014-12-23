@@ -7,9 +7,9 @@ Input = "Noel - sees Leon"  Output = "true"
 Input = "A war at Tarawa!"  Output = "true"
 
 =end
-
+require 'pry'
 
 def PalindromeTwo(str)
-
-  return str
+  edited_str = str.gsub(/[!-\/:-@≠\[-`{-~]/, "").gsub(/\s/, "")
+  edited_str.downcase.reverse == edited_str.downcase
 end
