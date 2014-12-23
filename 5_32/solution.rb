@@ -5,10 +5,18 @@ Using the Ruby language, have the function Division(num1,num2) take both paramet
 Input = 7 & num2 = 3  Output = 1
 Input = 36 & num2 = 5  4Output = 18
 
+
+
 =end
 require 'pry'
 
 def Division(num1,num2)
+  (divisible_nums(num1) & divisible_nums(num2)).last
+end
 
-
+def divisible_nums(num)
+  raw_num = (1..num).to_a
+  raw_num.select do |n|
+    num%n == 0
+  end
 end
