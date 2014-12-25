@@ -16,3 +16,11 @@ def ArithGeoII(arr)
 
 
 end
+
+def is_geo?
+
+end
+
+def is_ari?
+
+end
