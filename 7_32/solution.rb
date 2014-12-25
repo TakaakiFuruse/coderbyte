@@ -14,13 +14,22 @@ require 'pry'
 
 def ArithGeoII(arr)
 
-
 end
 
-def is_geo?
-
+def is_geo?(arr)
+  arry = []
+  arr.each_cons(2) do |n|
+    (n[0] > n[1]) ? (arry << (n[0] - n[1])) : (arry << ([1] - n[0]))
+  end
+  arry.uniq.length == 1
 end
 
-def is_ari?
-
+def is_ari?(arr)
+  arry = []
+  arr.each_cons(2) do |n|
+    (n[0] > n[1]) ? (arry << (n[0] % n[1])) : (arry << (n[1] % n[0]))
+  end
+  arry.uniq == [0]
 end
+
+is_ari?([18, 16, 14, 12, 10])
