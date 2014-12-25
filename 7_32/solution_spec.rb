@@ -17,26 +17,26 @@ describe "ArithGeoII" do
   end
 end
 
-describe "is_geo?" do
-  it "returns true if seq is Geo" do
-    expect(is_geo?([5, 10, 15])).to be(true)
-    expect(is_geo?([18, 16, 14, 12,10])).to be(true)
+describe "is_ari?" do
+  it "returns true if seq is ari" do
+    expect(is_ari?([5, 10, 15])).to be(true)
+    expect(is_ari?([18, 16, 14, 12,10])).to be(true)
   end
 
-  it "returns false if seq is not Geo" do
-    expect(is_geo?([5, 25, 125])).to be(false)
-    expect(is_geo?([3, 6, 12, 24, 48])).to be(false)
+  it "returns false if seq is not ari" do
+    expect(is_ari?([5, 25, 125])).to be(false)
+    expect(is_ari?([3, 6, 12, 24, 48])).to be(false)
   end
 end
 
-describe "is_ari?" do
-  it "returns true if seq is Arith" do
-    expect(is_ari?([5, 25, 125])).to be(true)
-    expect(is_ari?([48, 24, 12, 6, 3])).to be(true)
+describe "is_geo?" do
+  it "returns true if seq is geo" do
+    expect(is_geo?([5, 25, 125])).to be(true)
+    expect(is_geo?([48, 24, 12, 6, 3])).to be(true)
   end
 
-  it "returns false if seq is not Arith" do
-    expect(is_ari?([5, 10, 15])).to be(false)
-    expect(is_ari?([18, 16, 14, 12, 10])).to be(false)
+  it "returns false if seq is not geo" do
+    expect(is_geo?([5, 10, 15])).to be(false)
+    expect(is_geo?([18, 16, 14, 12, 10])).to be(false)
   end
 end

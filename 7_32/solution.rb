@@ -13,18 +13,27 @@ Input = 2,4,16,24  Output = -1
 require 'pry'
 
 def ArithGeoII(arr)
-
+  "Geometric" if is_geo?(arr) == true
+  "Arithmatic" if is_ari?(arr) == true
+  if is_ari?(arr) == false && is_geo?(arr) == false
+    -1
+  elsif is_geo?(arr) == true
+    "Geometric"
+  else is_ari?(arr) == true
+    "Arithmatic"
+  end
 end
 
-def is_geo?(arr)
+
+def is_ari?(arr)
   arry = []
   arr.each_cons(2) do |n|
-    (n[0] > n[1]) ? (arry << (n[0] - n[1])) : (arry << ([1] - n[0]))
+    (n[0] > n[1]) ? (arry << (n[0] - n[1])) : (arry << (n[1] - n[0]))
   end
   arry.uniq.length == 1
 end
 
-def is_ari?(arr)
+def is_geo?(arr)
   arry = []
   arr.each_cons(2) do |n|
     (n[0] > n[1]) ? (arry << (n[0] % n[1])) : (arry << (n[1] % n[0]))
@@ -32,4 +41,4 @@ def is_ari?(arr)
   arry.uniq == [0]
 end
 
-is_ari?([18, 16, 14, 12, 10])
+is_geo?([5, 25, 125])
