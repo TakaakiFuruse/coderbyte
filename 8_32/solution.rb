@@ -10,24 +10,24 @@ Input = 3,5,-1,8,12   12 <=> 5,-1,8  Output = "true"
 require 'pry'
 
 def ArrayAddition(arr)
-  edited_arr = edited_array(arr)
-  comb_num_arr = combinations(arr)
-  result_arr = combination_calc(edited_arr, comb_num_arr)
+  no_lagest_arr = largest_deleted_array(arr)
+  comb_num_arr = combination_nums(arr)
+  result_arr = combination_calc(no_lagest_arr, comb_num_arr)
   result_arr.include?(arr.sort!.last)
 end
 
-def edited_array(arr)
+def largest_deleted_array(arr)
   del_last_el = arr.sort! - [arr[-1]]
 end
 
-def combinations(arr)
+def combination_nums(arr)
   comb_num = (1..arr.length).to_a
 end
 
-def combination_calc(edited_arr, comb_num_arr)
+def combination_calc(no_lagest_arr, comb_num_arr)
   result_arr =[]
   comb_num_arr.each do |num|
-    edited_arr.combination(num).to_a.each do |n|
+    no_lagest_arr.combination(num).to_a.each do |n|
       result_arr << n.inject(:+)
     end
   end
