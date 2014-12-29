@@ -7,7 +7,7 @@ describe "LetterCount" do
 
   it "initialize instance variables" do
     expect(test1.sentence.class).to be(String)
-    expect(test1.sentence.words_arr).to be(Array)
+    expect(test1.words_arr.class).to be(Array)
   end
 
   describe "#letter_count" do
