@@ -18,6 +18,8 @@ class LetterCount
   end
 
   def letter_count
+    words_array = self.repeated_letters
+    (words_array.empty?) ? -1 : words_array[0]
   end
 
   def repeated_letters
