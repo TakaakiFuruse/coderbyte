@@ -18,14 +18,13 @@ class LetterCount
   end
 
   def letter_count
-
   end
 
-  def repeated_letters?
-
+  def repeated_letters
+    # if there's repeated letter, uniq reduces length of words
+    self.words_arr.select do |words|
+      (words.split("") <=> words.split("").uniq) != 0
+    end
   end
-
 
 end
-
-p test1 = LetterCount.new("aaa")
