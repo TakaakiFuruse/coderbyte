@@ -7,6 +7,25 @@ Input = "No words" Output = -1
 =end
 require 'pry'
 
-def LetterCount(str)
+
+class LetterCount
+  attr_reader :sentence
+  attr_accessor :words_arr
+
+  def initialize(args)
+    @sentence = args
+    @words_arr = args.split(" ")
+  end
+
+  def letter_count
+
+  end
+
+  def repeated_letters?
+
+  end
+
 
 end
+
+p test1 = LetterCount.new("aaa")
