@@ -27,6 +27,7 @@ class CaesarCipher
   end
 
   def next_char
+    # /[[:punct:]]/
 
   end
 
