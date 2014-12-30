@@ -13,4 +13,28 @@ Input = "abc" & num = 0
 require 'pry'
 
 class CaesarCipher
+
+  attr_reader :str, :num
+  attr_accessor :str_arr
+
+  def initialize(str, num)
+    @str = str
+    @num = num
+    @str_arr = str.split(" ")
+  end
+
+  def gen_caesar_cipher
+  end
+
+  def next_char
+
+  end
+
+  def next_char_recursive(num)
+
+  end
+
+
+
+
 end
