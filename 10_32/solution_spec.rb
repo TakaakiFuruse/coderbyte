@@ -3,7 +3,7 @@ require_relative "solution"
 describe "CaesarCipher" do
   let(:test1) {CaesarCipher.new("Hello", 4)}
   let(:test2) {CaesarCipher.new("abc", 0)}
-  let(:test3) {CaesarCipher.new("Caesar Cipher", 0)}
+  let(:test3) {CaesarCipher.new("Caesar Cipher", 2)}
   let(:test4) {CaesarCipher.new("!., :;-", 1)}
 
   it "initialize instances" do

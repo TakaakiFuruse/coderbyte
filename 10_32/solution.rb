@@ -12,9 +12,11 @@ Input = "abc" & num = 0
 require 'pry'
 
 module CharMod
-  def next_char(ltr)
+  def next_char(ltr, num)
     next_ltr = ltr.next
-    next_char(next_ltr)
+    return ltr if num == 0
+    num -= 1
+    next_char(next_ltr, num)
   end
 end
 
@@ -32,12 +34,14 @@ class CaesarCipher
 
   def gen_caesar_cipher
     # a.each_char{|n| p n if n =~ /[a-zA-Z]/ }
-    self.letter_arr.map do |letter|
+    ans_arr = []
+    self.letter_arr.each do |letter|
       if letter =~ /[a-zA-Z]/
-        self.num.trial.times.next_char(letter)
+        ans_arr << next_char(letter, self.num)
       else
-        letter
+        ans_arr << letter
       end
     end
+    ans_arr.join
   end
 end
