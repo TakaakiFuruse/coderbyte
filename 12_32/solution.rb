@@ -10,8 +10,10 @@ require 'pry'
 
 
 def simple_mode(arr)
+  mode_hash = count_mode(arr)
+  mode_arr = mode_hash.max_by{|k,v| v}
+  (mode_arr[1] > 1) ? mode_arr[0] : -1
 end
-
 
 def count_mode(arr)
   mode_hash = {}
