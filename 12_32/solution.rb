@@ -18,11 +18,7 @@ end
 def count_mode(arr)
   mode_hash = {}
   arr.each do |num|
-    if mode_hash[num].is_a?(Integer)
-      mode_hash[num] += 1
-    else
-      mode_hash[num] = 1
-    end
+    mode_hash.has_key?(num) ? (mode_hash[num] += 1) : (mode_hash[num] = 1)
   end
   mode_hash
 end
