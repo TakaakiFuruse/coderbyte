@@ -12,30 +12,33 @@ Input = "abc" & num = 0
 =end
 require 'pry'
 
+module CharMod
+  def next_char(ltr)
+    next_ltr = ltr.next
+    return next_char(next_ltr)
+  end
+end
+
 class CaesarCipher
+  include CharMod
 
   attr_reader :str, :num
-  attr_accessor :str_arr
+  attr_accessor :letter_arr
 
   def initialize(str, num)
     @str = str
     @num = num
-    @str_arr = str.split(" ")
+    @letter_arr = str.split("")
   end
 
   def gen_caesar_cipher
+    # a.each_char{|n| p n if n =~ /[a-zA-Z]/ }
+    self.letter_arr.map do |letter|
+      if letter =~ /[a-zA-Z]/
+        self.num.trial.times.next_char(letter)
+      else
+        letter
+      end
+    end
   end
-
-  def next_char
-    # /[[:punct:]]/
-
-  end
-
-  def next_char_recursive(num)
-
-  end
-
-
-
-
 end
