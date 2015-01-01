@@ -13,10 +13,9 @@ require 'pry'
 
 module CharMod
   def next_char(ltr, num)
-    next_ltr = ltr.next
     return ltr if num == 0
     num -= 1
-    next_char(next_ltr, num)
+    next_char(ltr.next!, num)
   end
 end
 
@@ -29,13 +28,11 @@ class CaesarCipher
   def initialize(str, num)
     @str = str
     @num = num
-    @letter_arr = str.split("")
   end
 
   def gen_caesar_cipher
-    # a.each_char{|n| p n if n =~ /[a-zA-Z]/ }
     ans_arr = []
-    self.letter_arr.each do |letter|
+    self.str.each_char do |letter|
       if letter =~ /[a-zA-Z]/
         ans_arr << next_char(letter, self.num)
       else
@@ -44,4 +41,5 @@ class CaesarCipher
     end
     ans_arr.join
   end
+
 end

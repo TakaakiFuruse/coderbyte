@@ -9,7 +9,7 @@ describe "CaesarCipher" do
   it "initialize instances" do
     expect(test1.str).to eq("Hello")
     expect(test1.num).to eq(4)
-    expect(test1.letter_arr).to eq(["H","e","l","l","o"])
+
   end
 
   describe "#gen_caesar_cipher" do
