@@ -8,8 +8,11 @@ Input = 3,4,1,6,10  Output = -1
 
 require 'pry'
 
+
 def simple_mode(arr)
+end
 
 
+def count_mode(arr)
 
 end
