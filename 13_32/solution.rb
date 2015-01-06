@@ -41,5 +41,7 @@ def consecutive(arr)
 end
 
 def consecutive_arr(arr)
-  (arr.sort[0]..arr.sort[-1]).to_a
+  first_el = arr.sort[0]
+  last_el = arr.sort[-1]
+  (first_el..last_el).to_a
 end
