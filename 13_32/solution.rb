@@ -37,5 +37,9 @@ require 'pry'
 
 
 def consecutive(arr)
+  consecutive_arr(arr).length -   arr.length
+end
 
+def consecutive_arr(arr)
+  (arr.sort[0]..arr.sort[-1]).to_a
 end
