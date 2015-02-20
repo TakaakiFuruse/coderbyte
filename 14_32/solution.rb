@@ -28,22 +28,24 @@ def FormattedDivision(num1,num2)
   if num1 == num2 
     "1.0000"
   else
-    num_with_comma = ((((num1 + 0.0001))-0.0001)/num2).round(4).to_s
+    num_with_comma = num1_divide_by_num2(num1, num2).round(4).to_s
+
     split_by_comma(num_with_comma.split(".")[0]) + "." + num_with_comma.split(".")[1]
+
   end
 end
 
+def num1_divide_by_num2(num1, num2)
+  # a hack
+  ( (num1 + 0.0001)-0.0001 )/num2
+end
 
 def split_by_comma(num_str)
   num_array = num_str.split("")
   comma_array = []
 
   num_array.reverse.each_with_index do |num, ind|
-    if ind % 3 == 0 && ind != 0
-      comma_array <<  "," + num
-    else
-      comma_array << num
-    end
+    (ind % 3 == 0 && ind != 0) ? (comma_array <<  "," + num) : (comma_array << num)
   end
 
   comma_array.join("").reverse
