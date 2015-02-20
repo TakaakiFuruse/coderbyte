@@ -37,7 +37,7 @@ require 'pry'
 
 
 def consecutive(arr)
-  consecutive_arr(arr).length -   arr.length
+  consecutive_arr(arr).length - arr.length
 end
 
 def consecutive_arr(arr)
