@@ -1,4 +1,5 @@
 require_relative "solution"
+
 =begin
 
 123456789,  10000 -> 12,345.6789
@@ -21,11 +22,11 @@ end
 
 describe "split_by_comma" do
   it "separates number by commna and returns result as string" do
-    expect(split_by_comma(10000)).to eq("10,000")
-    expect(split_by_comma(1000)).to eq("1,000")
-    expect(split_by_comma(123)).to eq("123")
-    expect(split_by_comma(10)).to eq("10")
-
-
+    expect(split_by_comma("1000000")).to eq("1,000,000")
+    expect(split_by_comma("100000")).to eq("100,000")
+    expect(split_by_comma("10000")).to eq("10,000")
+    expect(split_by_comma("1000")).to eq("1,000")
+    expect(split_by_comma("123")).to eq("123")
+    expect(split_by_comma("10")).to eq("10")
   end
 end

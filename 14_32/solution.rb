@@ -25,10 +25,27 @@ try
 require 'pry'
 
 def FormattedDivision(num1,num2)
-    ((((num1 + 0.0001))-0.0001)/num2).round(4).to_s
-
+  if num1 == num2 
+    "1.0000"
+  else
+    num_with_comma = ((((num1 + 0.0001))-0.0001)/num2).round(4).to_s
+    split_by_comma(num_with_comma.split(".")[0]) + "." + num_with_comma.split(".")[1]
+  end
 end
 
-def split_by_comma(num)
 
+def split_by_comma(num_str)
+  num_array = num_str.split("")
+  comma_array = []
+
+  num_array.reverse.each_with_index do |num, ind|
+    if ind % 3 == 0 && ind != 0
+      comma_array <<  "," + num
+    else
+      comma_array << num
+    end
+  end
+
+  comma_array.join("").reverse
 end
+
