@@ -7,13 +7,28 @@ Input = 10 , num2 = 10 Output = "1.0000"
 
 p code
 
-num1 / num2 
-(( num1 % num2 ) % num2) % num2 ) ...
+try
+
+ (((123456789 + 0.0001)-0.0001)/10000).round(5)
+
+[10] pry(main)> (2.0000/3).to_f
+=> 0.6666666666666666
+[11] pry(main)> (123456789.0000/3).to_f
+=> 41152263.0
+[12] pry(main)> (123456789.0000/10000).to_f
+=> 12345.6789
+[13] pry(main)> (10.0000/10).to_f
+=> 1.0
 
 =end
 
 require 'pry'
 
 def FormattedDivision(num1,num2)
-         
+    ((((num1 + 0.0001))-0.0001)/num2).round(4).to_s
+
+end
+
+def split_by_comma(num)
+
 end
