@@ -1,11 +1,6 @@
 =begin
 Using the Ruby language, have the function PermutationStep(num) take the num parameter being passed and return the next number greater than num using the same digits. For example: if num is 123 return 132, if it's 12453 return 12534. If a number has no greater permutations, return -1 (ie. 999). 
 
-123 -> 132
-123453 => 12534
-999 => -1
-11121 => 11211
-41352 => 41523
 
 
 [17] pry(main)> a.permutation(3).to_a
@@ -31,5 +26,18 @@ require 'pry'
 
 
 def PermutationStep(num)
-    
+
+  num_length = num.to_s.split("").length
+  num_array = num.to_s.split("")
+
+  num_permutaition = num_array.permutation(num_length).to_a.map{|n| n.join("").to_i}.uniq
+  answer = num_permutaition.uniq.sort.map{|n| n - num}
+
+  if answer.length == 1
+    return -1
+  else
+    address = answer.sort.find_index(0) + 1
+    num_permutaition.sort[address]
+  end
 end
+
