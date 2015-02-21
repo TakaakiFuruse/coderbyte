@@ -9,9 +9,43 @@ Use the Parameter Testing feature in the box below to test your code with differ
  "12:30pm-12:00am" > 690
 "1:23am-1:08am" >1425
 
+stopped codeing. 'cause time 
+
 =end
 
 require 'pry'
 
+
 def CountingMinutes(str)
+
 end
+
+def get_start_time(str)
+  str.split("-")[0]
+end
+
+def get_end_time(str)
+  str.split("-")[1]
+end
+
+def am_or_pm(str)
+  return 0 if str =~ /am/ 
+  retrun 1 str =~ /pm/
+end
+
+def get_hour(str)
+  str.split(":")[0]
+end
+
+def get_min(str)
+  str.split(":")[1]
+end
+
+def covnert_to_min(str)
+  if am_or_pm(str) == 0
+    get_hour(str) * 60 + get_min(str)
+  elsif am_or_pm(str) == 1
+    get_hour(str) * 60 + 12 * 60 + get_min(str)
+  end
+end
+
