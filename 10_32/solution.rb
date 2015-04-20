@@ -30,3 +30,4 @@ class LetterCount
   end
 
 end
+

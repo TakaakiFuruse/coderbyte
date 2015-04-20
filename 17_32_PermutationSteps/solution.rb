@@ -27,17 +27,22 @@ require 'pry'
 
 def PermutationStep(num)
 
-  num_length = num.to_s.split("").length
-  num_array = num.to_s.split("")
+  num_array = num_to_a(num)
+  permutation = num_permutation(num_array)
+  diff_array = permutation.sort.map{|n| n - num}
+  next_largest_num_address = diff_array.sort.find_index(0) + 1
 
-  num_permutaition = num_array.permutation(num_length).to_a.map{|n| n.join("").to_i}.uniq
-  answer = num_permutaition.uniq.sort.map{|n| n - num}
-
-  if answer.length == 1
-    return -1
+  if diff_array.length == 1
+    -1
   else
-    address = answer.sort.find_index(0) + 1
-    num_permutaition.sort[address]
+    permutation.sort[next_largest_num_address]
   end
 end
 
+def num_to_a(num)
+  num.to_s.split("")
+end
+
+def num_permutation(num_array)
+  num_array.permutation(num_array.length).map{|n| n.join("").to_i}.uniq
+end
